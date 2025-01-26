@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 function InventoryTable({
   items,
   categories,
@@ -10,6 +11,7 @@ function InventoryTable({
   onDelete,
   onEdit,
 }) {
+
   const [editingItemId, setEditingItemId] = useState(null);
   const [editFormData, setEditFormData] = useState({});
 
@@ -40,6 +42,7 @@ function InventoryTable({
 
   return (
     <div className="table-container">
+
       <div className="filter-section">
         <label>
           Filter by Category:
@@ -54,9 +57,12 @@ function InventoryTable({
             ))}
           </select>
         </label>
+
         <button onClick={() => onSortChange("asc")} className="sort-button">Sort Asc</button>
         <button onClick={() => onSortChange("desc")} className="sort-button">Sort Desc</button>
+
       </div>
+
       <table className="styled-table">
         <thead>
           <tr>
@@ -67,6 +73,7 @@ function InventoryTable({
           </tr>
         </thead>
         <tbody>
+
           {filteredItems.map((item) => (
             <tr
               key={item.id}
@@ -125,7 +132,9 @@ function InventoryTable({
             </tr>
           ))}
         </tbody>
+
       </table>
+      
     </div>
   );
 }
