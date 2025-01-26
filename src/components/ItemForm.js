@@ -56,6 +56,7 @@ function ItemForm({ categories, onSave }) {
 
   return (
     <form onSubmit={handleSubmit} className="form-container">
+      
       <div className="form-group">
         <label>
           Name:
@@ -69,6 +70,7 @@ function ItemForm({ categories, onSave }) {
           />
         </label>
       </div>
+
       <div className="form-group">
         <label>
           Category:
@@ -87,6 +89,7 @@ function ItemForm({ categories, onSave }) {
             <option value="custom">Add New Category</option>
           </select>
         </label>
+
         {isCustomCategory && (
           <input
             type="text"
@@ -98,6 +101,7 @@ function ItemForm({ categories, onSave }) {
           />
         )}
       </div>
+
       <div className="form-group">
         <label>
           Quantity:
@@ -111,7 +115,9 @@ function ItemForm({ categories, onSave }) {
           />
         </label>
       </div>
+
       <button type="submit" className="form-button">Add Item</button>
+      
     </form>
   );
 }
